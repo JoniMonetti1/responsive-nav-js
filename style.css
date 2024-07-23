@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+
+.title {
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-shadow: 1px 4px 5px rgba(0,0,0,0.65);
+}
+
+.title span {
+    color: #5585b5;
+}
+
+.nav-bar ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-bar ul a {
+    text-decoration: none;
+    color: #444;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+}
+
+.nav-bar ul a:hover {
+    color: #5585b5;
+    text-decoration: underline;
+}
+
+.nav-bar ul a.active {
+    color: #5585b5;
+    text-decoration: underline;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-media i {
+    color: #5585b5;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.social-media i:hover {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.movil-menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;   
+}
+
+.movil-menu i {
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: #333
+}
+
+.movil-menu i:hover {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+    color: #5585b5;
+}
+
+@media screen and (max-width: 1320px) {
+    header {
+        padding: 0 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 960px) {
+    header {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .movil-menu {
+        display: flex;
+    }
+
+    .social-media {
+        /* display: none; */
+    }
+
+    .nav-bar, .social-media {
+        /* display: none; */
+    }
+
+    .nav-bar {
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.2s ease;
+    }
+
+    .nav-bar.active {
+        height: 350px;
+    }
+
+    .nav-bar ul {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .nav-bar.active ul {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+    .social-media {
+        position: absolute;
+        top: 320px;
+        left: 0;
+        padding-left: 0.5rem;
+        background-color: #fff;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.1s ease;
+    }
+
+    .social-media.active {
+        opacity: 1;
+        transition: opacity 0.1s ease;
+    }
+}
