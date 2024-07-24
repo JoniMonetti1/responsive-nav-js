@@ -106,14 +106,6 @@ header {
         display: flex;
     }
 
-    .social-media {
-        /* display: none; */
-    }
-
-    .nav-bar, .social-media {
-        /* display: none; */
-    }
-
     .nav-bar {
         position: absolute;
         top: 10vh;
